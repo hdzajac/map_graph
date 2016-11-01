@@ -11,7 +11,7 @@ public class App {
     public static void main(String[] args) throws IOException, OsmXmlParserException {
         GraphFactory gf = new GraphFactory();
 
-        gf.makeGraph("albania-latest.osm.xml");
+        gf.makeGraph("andorra-latest.osm");
 
     }
 

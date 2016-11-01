@@ -3,6 +3,7 @@ import se.kodapan.osm.domain.root.PojoRoot;
 import se.kodapan.osm.domain.root.indexed.IndexedRoot;
 import se.kodapan.osm.parser.xml.OsmXmlParserException;
 import se.kodapan.osm.parser.xml.instantiated.InstantiatedOsmXmlParser;
+import sun.rmi.runtime.Log;
 
 import java.io.IOException;
 
@@ -18,7 +19,9 @@ public class GraphFactory {
 
         InstantiatedOsmXmlParser parser = InstantiatedOsmXmlParser.newInstance();
         parser.setRoot(index);
-        parser.parse(("../resources/" + mapsName));
+        parser.parse(getClass().getResourceAsStream("/" + mapsName));
         index.commit();
+
+        System.out.print(root.getNodes().size());
     }
 }
